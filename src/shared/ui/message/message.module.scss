@@ -1,0 +1,29 @@
+.message {
+    z-index: 5;
+    color: red;
+    padding: 5px 10px;
+    border-radius: 5px;
+    box-shadow: 1px 1px 10px 1px red;
+    background-color: rgb(255, 231, 231);
+    position: fixed;
+    left: 50%;
+    top: 0;
+    display: none;
+    transform: translate(-50%, 50%);
+
+    @media (min-width: 1500px) {
+        padding: 7px 12px;
+        border-radius: 7px;
+        box-shadow: 2px 2px 14px 2px red;
+    }
+
+    @media (min-width: 1800px) {
+        padding: 10px 15px;
+        border-radius: 10px;
+        box-shadow: 3px 3px 16px 3px red;
+    }
+
+    &_open {
+        display: block;
+    }
+}
