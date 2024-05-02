@@ -57,17 +57,12 @@ export const ConfirmUser = () => {
                 <h2>{changed ? `Confirm changes` : 'Confirm deleting'}</h2>
                 {((loading_change || loading_delete) && <Loading />) || (
                     <>
-                        <FormInput
-                            type='password'
-                            title='password'
-                            value={password}
-                            changeHandler={changePassword}
-                        />
                         <div className='form__buttons'>
                             <FormButton
                                 onClick={submitHandler}
                                 text='Confirm'
                                 type='submit'
+                                attention={!changed}
                             />
                             <FormButton
                                 onClick={() => {

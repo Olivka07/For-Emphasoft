@@ -52,6 +52,7 @@
                 font: var(--font-xl);
                 margin-left: 30px;
             }
+            &:hover,
             & a:hover {
                 cursor: pointer;
                 color: rgb(136, 47, 2);

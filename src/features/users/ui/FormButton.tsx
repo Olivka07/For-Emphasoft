@@ -5,7 +5,7 @@ interface FormButtonProps {
     type: 'submit' | 'reset';
     onClick: MouseEventHandler<HTMLButtonElement>;
     text: string;
-    attention?: true;
+    attention?: boolean;
 }
 
 export const FormButton: FC<FormButtonProps> = ({

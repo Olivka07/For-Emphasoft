@@ -110,14 +110,14 @@ export const FormUser: FC<FormUserProps> = ({ toggle, id }) => {
                             value={username}
                             changeHandler={changeUsername}
                         />
-                        {!id && (
-                            <FormInput
-                                type='password'
-                                title='password'
-                                value={password}
-                                changeHandler={changePassword}
-                            />
-                        )}
+
+                        <FormInput
+                            type='password'
+                            title='password'
+                            value={password}
+                            changeHandler={changePassword}
+                        />
+
                         <FormInput
                             title='first_name'
                             value={first_name}
