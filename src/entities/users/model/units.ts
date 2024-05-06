@@ -1,12 +1,12 @@
 import { createEffect, createEvent, createStore, sample } from 'effector';
 import { debounce } from 'patronum';
-import { IUserDTO, PostUser } from '../../../shared/api/users/model';
+import { IUserDTO, PostUser } from 'shared/api/users/model';
 import {
     createUser,
     deleteUser,
     getUsers,
     putUser
-} from '../../../shared/api/users/users';
+} from 'shared/api/users/users';
 
 const DEBOUNCE_TIME = 600;
 

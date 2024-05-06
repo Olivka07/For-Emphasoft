@@ -1,8 +1,8 @@
 import { Routes, Route } from 'react-router-dom';
-import { AsyncUsersPage } from '../../pages/users';
-import { AsyncAuthForm } from '../../pages/auth-form';
-import { AsyncUserForm } from '../../pages/user-form';
-import { AsyncConfirmForm } from '../../pages/confirm';
+import { AsyncUsersPage } from 'pages/users';
+import { AsyncAuthForm } from 'pages/auth-form';
+import { AsyncUserForm } from 'pages/user-form';
+import { AsyncConfirmForm } from 'pages/confirm';
 
 export const AppRoutes = () => (
     <Routes>

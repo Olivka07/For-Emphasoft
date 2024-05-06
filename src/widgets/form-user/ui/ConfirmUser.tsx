@@ -1,11 +1,10 @@
-import React, { ChangeEvent, useState } from 'react';
-import { Loading } from '../../../shared/ui/loading';
-import FormInput from '../../../features/users/ui/FormInput';
+import React, { ChangeEvent } from 'react';
+import { Loading } from 'shared/ui/loading';
 import { useNavigate, useOutletContext } from 'react-router-dom';
-import { PostUser } from '../../../shared/api/users/model';
-import { FormButton } from '../../../features/users/ui/FormButton';
+import { PostUser } from 'shared/api/users/model';
+import { FormButton } from 'features/users/ui/FormButton';
 import { useUnit } from 'effector-react';
-import { deleteUserFx, putUserFx } from '../../../entities/users/model/units';
+import { deleteUserFx, putUserFx } from 'entities/users/model/units';
 
 type ContextType = PostUser & {
     changePassword: (e: ChangeEvent<HTMLInputElement>) => void;

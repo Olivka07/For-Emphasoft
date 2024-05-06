@@ -1,10 +1,9 @@
 import React, { useEffect } from 'react';
-import { Modal } from '../../../shared/ui/modal';
-import { FormAuthorize } from '../../../widgets/form-auth/ui/FormAuthorize';
-import { Message } from '../../../shared/ui/message/Message';
-import { useMessage } from '../../../shared/helpers/hooks/message.hook';
+import { Modal } from 'shared/ui/modal';
+import { Message } from 'shared/ui/message/Message';
+import { useMessage } from 'shared/helpers/hooks/message.hook';
 import { Outlet, useNavigate, useParams } from 'react-router-dom';
-import { FormUser } from '../../../widgets/form-user/ui/FormUser';
+import { FormUser } from 'widgets/form-user/ui/FormUser';
 
 const UserForm = () => {
     const { id } = useParams();

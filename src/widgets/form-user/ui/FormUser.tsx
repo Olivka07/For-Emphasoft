@@ -1,5 +1,5 @@
-import FormInput from '../../../features/users/ui/FormInput';
-import { FormButton } from '../../../features/users/ui/FormButton';
+import FormInput from 'features/users/ui/FormInput';
+import { FormButton } from 'features/users/ui/FormButton';
 import React, {
     ChangeEvent,
     FC,
@@ -8,11 +8,10 @@ import React, {
     useState
 } from 'react';
 import { Outlet, useNavigate } from 'react-router-dom';
-import { usersStore } from '../../../entities/users';
-import { getUser } from '../../../shared/api/users/users';
-import { useLoading } from '../../../shared/helpers/hooks/loading.hook';
-import { Loading } from '../../../shared/ui/loading';
-import { createUserFx } from '../../../entities/users/model/units';
+import { getUser } from 'shared/api/users/users';
+import { useLoading } from 'shared/helpers/hooks/loading.hook';
+import { Loading } from 'shared/ui/loading';
+import { createUserFx } from 'entities/users/model/units';
 
 interface FormUserProps {
     id?: number;

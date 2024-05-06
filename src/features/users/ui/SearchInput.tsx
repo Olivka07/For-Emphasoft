@@ -1,4 +1,4 @@
-import { changedSearching } from '../../../entities/users/model/units';
+import { changedSearching } from 'entities/users/model/units';
 import React, { ChangeEvent, useState } from 'react';
 import * as classes from './users.module.scss';
 

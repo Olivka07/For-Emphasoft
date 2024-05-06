@@ -1,7 +1,5 @@
-import { useUnit } from 'effector-react';
-import { $formUser } from '../../../entities/form/model';
 import React, { ChangeEvent, FC, useEffect, useState } from 'react';
-import { VALIDATION } from '../../../shared/config';
+import { VALIDATION } from 'shared/config';
 
 type TypeInput = 'checkbox' | 'password';
 

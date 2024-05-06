@@ -1,5 +1,5 @@
 import React, { FC } from 'react';
-import { IUserDTO } from '../../../../shared/api/users/model';
+import { IUserDTO } from 'shared/api/users/model';
 import * as classes from './user.module.scss';
 interface UserProps {
     user: IUserDTO;

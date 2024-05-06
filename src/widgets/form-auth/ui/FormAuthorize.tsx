@@ -1,10 +1,10 @@
-import { FormButton } from '../../../features/users/ui/FormButton';
-import FormInput from '../../../features/users/ui/FormInput';
+import { FormButton } from 'features/users/ui/FormButton';
+import FormInput from 'features/users/ui/FormInput';
 import React, { ChangeEvent, FC, MouseEventHandler, useState } from 'react';
-import { login } from '../../../shared/api/users/users';
+import { login } from 'shared/api/users/users';
 import { useNavigate } from 'react-router-dom';
-import { changeAuth } from '../../../entities/auth/model';
-import { usersStore } from '../../../entities/users';
+import { changeAuth } from 'entities/auth/model';
+import { usersStore } from 'entities/users';
 
 interface FormAuthorizeProps {
     toggle: (p: string) => void;

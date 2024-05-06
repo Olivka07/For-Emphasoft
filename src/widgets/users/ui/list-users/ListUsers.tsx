@@ -1,10 +1,10 @@
 import { useUnit } from 'effector-react';
-import { $listUsers } from '../../../../entities/users/model/units';
-import User from '../../../../entities/users/ui/user/User';
+import { $listUsers } from 'entities/users/model/units';
+import User from 'entities/users/ui/user/User';
 import React from 'react';
-import { SearchInput } from '../../../../features/users/ui/SearchInput';
-import SortButton from '../../../../features/users/ui/SortButton';
-import { AddButton } from '../../../../features/users/ui/AddButton';
+import { SearchInput } from 'features/users/ui/SearchInput';
+import SortButton from 'features/users/ui/SortButton';
+import { AddButton } from 'features/users/ui/AddButton';
 import { useNavigate } from 'react-router-dom';
 
 export const ListUsers = () => {

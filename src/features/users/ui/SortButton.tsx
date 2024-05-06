@@ -1,4 +1,4 @@
-import { sortAsc, sortDesc } from '../../../entities/users/model/units';
+import { sortAsc, sortDesc } from 'entities/users/model/units';
 import React, { FC } from 'react';
 import * as classes from './users.module.scss';
 interface SortButtonProps {

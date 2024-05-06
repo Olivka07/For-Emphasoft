@@ -1,9 +1,8 @@
 import React, { useEffect } from 'react';
-import { login } from '../../../shared/api/users/users';
-import { Modal } from '../../../shared/ui/modal';
-import { FormAuthorize } from '../../../widgets/form-auth/ui/FormAuthorize';
-import { Message } from '../../../shared/ui/message/Message';
-import { useMessage } from '../../../shared/helpers/hooks/message.hook';
+import { Modal } from 'shared/ui/modal';
+import { FormAuthorize } from 'widgets/form-auth/ui/FormAuthorize';
+import { Message } from 'shared/ui/message/Message';
+import { useMessage } from 'shared/helpers/hooks/message.hook';
 import { useNavigate } from 'react-router-dom';
 
 const AuthForm = () => {
