@@ -12,6 +12,7 @@ import { getUser } from 'shared/api/users/users';
 import { useLoading } from 'shared/helpers/hooks/loading.hook';
 import { Loading } from 'shared/ui/loading';
 import { createUserFx } from 'entities/users/model/units';
+import { useTranslation } from 'react-i18next';
 
 interface FormUserProps {
     id?: number;
@@ -26,6 +27,8 @@ export const FormUser: FC<FormUserProps> = ({ toggle, id }) => {
     const [first_name, setFirstName] = useState('');
     const [last_name, setLastName] = useState('');
     const [is_active, setIsActive] = useState<boolean>(false);
+
+    const { t } = useTranslation('form');
 
     const navigate = useNavigate();
 
@@ -101,7 +104,9 @@ export const FormUser: FC<FormUserProps> = ({ toggle, id }) => {
                 }}
             />
             <form className='form'>
-                <h2>{id ? 'Change user' : 'Create user'}</h2>
+                <h2>
+                    {t(id ? 'Изменить пользователя' : 'Создать пользователя')}
+                </h2>
                 {(loading && <Loading />) || (
                     <>
                         <FormInput
@@ -139,7 +144,7 @@ export const FormUser: FC<FormUserProps> = ({ toggle, id }) => {
                                     submitHandler(e);
                                     setChanged(true);
                                 }}
-                                text={id ? 'Change' : 'Register'}
+                                text={id ? 'Изменить' : 'Зарегистрировать'}
                                 type='submit'
                             />
                             {(id && (
@@ -148,7 +153,7 @@ export const FormUser: FC<FormUserProps> = ({ toggle, id }) => {
                                         submitHandler(e);
                                         setChanged(false);
                                     }}
-                                    text={'Delete'}
+                                    text='Удалить'
                                     type='submit'
                                     attention={true}
                                 />
@@ -157,7 +162,7 @@ export const FormUser: FC<FormUserProps> = ({ toggle, id }) => {
                                 onClick={() => {
                                     navigate('/');
                                 }}
-                                text='Cancel'
+                                text='Отмена'
                                 type='reset'
                             />
                         </div>

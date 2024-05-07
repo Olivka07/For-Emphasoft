@@ -5,6 +5,7 @@ import { login } from 'shared/api/users/users';
 import { useNavigate } from 'react-router-dom';
 import { changeAuth } from 'entities/auth/model';
 import { usersStore } from 'entities/users';
+import { useTranslation } from 'react-i18next';
 
 interface FormAuthorizeProps {
     toggle: (p: string) => void;
@@ -13,6 +14,8 @@ interface FormAuthorizeProps {
 export const FormAuthorize: FC<FormAuthorizeProps> = ({ toggle }) => {
     const [username, setUsername] = useState('');
     const [password, setPassword] = useState('');
+
+    const { t } = useTranslation('form');
     const navigate = useNavigate();
 
     const changeUsername = (e: ChangeEvent<HTMLInputElement>) => {
@@ -34,7 +37,7 @@ export const FormAuthorize: FC<FormAuthorizeProps> = ({ toggle }) => {
     };
     return (
         <form className='form'>
-            <h2>Log in</h2>
+            <h2>{t('Войти')}</h2>
             <FormInput
                 title='username'
                 value={username}
@@ -48,14 +51,14 @@ export const FormAuthorize: FC<FormAuthorizeProps> = ({ toggle }) => {
             <div className='form__buttons'>
                 <FormButton
                     onClick={submitHandler}
-                    text='Login'
+                    text='Войти'
                     type='submit'
                 />
                 <FormButton
                     onClick={() => {
                         navigate('/');
                     }}
-                    text='Cancel'
+                    text='Отмена'
                     type='reset'
                 />
             </div>

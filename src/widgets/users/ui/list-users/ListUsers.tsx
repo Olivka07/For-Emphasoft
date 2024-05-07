@@ -1,14 +1,16 @@
 import { useUnit } from 'effector-react';
 import { $listUsers } from 'entities/users/model/units';
-import User from 'entities/users/ui/user/User';
+import { User } from 'entities/users/ui/user/User';
 import React from 'react';
 import { SearchInput } from 'features/users/ui/SearchInput';
 import SortButton from 'features/users/ui/SortButton';
 import { AddButton } from 'features/users/ui/AddButton';
 import { useNavigate } from 'react-router-dom';
+import { useTranslation } from 'react-i18next';
 
 export const ListUsers = () => {
     const navigate = useNavigate();
+    const { t } = useTranslation();
     const listUsers = useUnit($listUsers);
     if (listUsers !== null)
         return (
@@ -21,7 +23,7 @@ export const ListUsers = () => {
                     zIndex: 0
                 }}
             >
-                <h1>List Users</h1>
+                <h1>{t('Список пользователей')}</h1>
                 <SearchInput />
                 <div className='users__container'>
                     <div>
@@ -43,6 +45,8 @@ export const ListUsers = () => {
             </div>
         );
     return (
-        <div style={{ textAlign: 'center' }}>To view users you must log in</div>
+        <div style={{ textAlign: 'center' }}>
+            {t('Чтобы увидеть список пользователей, необходимо войти')}
+        </div>
     );
 };

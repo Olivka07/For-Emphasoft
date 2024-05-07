@@ -5,7 +5,7 @@ import { useMessage } from 'shared/helpers/hooks/message.hook';
 import { Outlet, useNavigate, useParams } from 'react-router-dom';
 import { FormUser } from 'widgets/form-user/ui/FormUser';
 
-const UserForm = () => {
+const UserFormPage = () => {
     const { id } = useParams();
     const { toggle, visible } = useMessage();
     const navigate = useNavigate();
@@ -32,4 +32,4 @@ const UserForm = () => {
     );
 };
 
-export default UserForm;
+export default UserFormPage;

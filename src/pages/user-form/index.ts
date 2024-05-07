@@ -1,1 +1,1 @@
-export { AsyncUserForm } from './ui';
+export { AsyncUserFormPage as UserFormPage } from './ui/AsyncUserFormPage';

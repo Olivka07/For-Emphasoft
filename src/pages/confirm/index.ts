@@ -1,1 +1,1 @@
-export { AsyncConfirmForm } from './ui';
+export { AsyncConfirmFormPage as ConfirmFormPage } from './ui/AsyncConfirmFormPage';

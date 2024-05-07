@@ -5,6 +5,7 @@ import { PostUser } from 'shared/api/users/model';
 import { FormButton } from 'features/users/ui/FormButton';
 import { useUnit } from 'effector-react';
 import { deleteUserFx, putUserFx } from 'entities/users/model/units';
+import { useTranslation } from 'react-i18next';
 
 type ContextType = PostUser & {
     changePassword: (e: ChangeEvent<HTMLInputElement>) => void;
@@ -16,6 +17,9 @@ type ContextType = PostUser & {
 export const ConfirmUser = () => {
     const loading_change = useUnit(putUserFx.pending);
     const loading_delete = useUnit(deleteUserFx.pending);
+
+    const { t } = useTranslation('form');
+
     const navigate = useNavigate();
 
     const {
@@ -53,13 +57,19 @@ export const ConfirmUser = () => {
     return (
         <div className='form__confirm'>
             <form className='form'>
-                <h2>{changed ? `Confirm changes` : 'Confirm deleting'}</h2>
+                <h2>
+                    {t(
+                        changed
+                            ? `Подтвердить изменения`
+                            : 'Подтвердить удаление'
+                    )}
+                </h2>
                 {((loading_change || loading_delete) && <Loading />) || (
                     <>
                         <div className='form__buttons'>
                             <FormButton
                                 onClick={submitHandler}
-                                text='Confirm'
+                                text='Подтвердить'
                                 type='submit'
                                 attention={!changed}
                             />
@@ -67,7 +77,7 @@ export const ConfirmUser = () => {
                                 onClick={() => {
                                     navigate('../');
                                 }}
-                                text='Cancel'
+                                text='Отмена'
                                 type='reset'
                             />
                         </div>

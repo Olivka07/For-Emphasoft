@@ -1,4 +1,5 @@
 import React, { FC, MouseEventHandler } from 'react';
+import { useTranslation } from 'react-i18next';
 import { Link } from 'react-router-dom';
 
 interface FormButtonProps {
@@ -8,12 +9,11 @@ interface FormButtonProps {
     attention?: boolean;
 }
 
-export const FormButton: FC<FormButtonProps> = ({
-    onClick,
-    text,
-    type,
-    attention
-}) => {
+export const FormButton: FC<FormButtonProps> = (props) => {
+    const { onClick, text, type, attention } = props;
+
+    const { t } = useTranslation('form');
+
     if (type === 'submit')
         return (
             <button
@@ -21,12 +21,12 @@ export const FormButton: FC<FormButtonProps> = ({
                 className={`form__button ${attention ? 'form__button_attention' : 'form__button_submit'}`}
                 onClick={onClick}
             >
-                {text}
+                {t(text)}
             </button>
         );
     return (
         <button onClick={onClick} className='form__button' type='reset'>
-            {text}
+            {t(text)}
         </button>
     );
 };

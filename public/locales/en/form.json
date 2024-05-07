@@ -1,0 +1,17 @@
+{
+    "username": "username",
+    "password": "password",
+    "first_name": "first_name",
+    "last_name": "last_name",
+    "is_active": "is_active",
+    "Войти": "Login",
+    "Отмена": "Cancel",
+    "Подтвердить": "Confirm",
+    "Изменить": "Change",
+    "Зарегистрировать": "Register",
+    "Удалить": "Delete",
+    "Изменить пользователя": "Change user",
+    "Создать пользователя": "Create user",
+    "Подтвердить изменения": "Confirm changes",
+    "Подтвердить удаление": "Confirm deleting"
+}

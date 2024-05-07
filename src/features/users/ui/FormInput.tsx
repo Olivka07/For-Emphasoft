@@ -1,4 +1,5 @@
 import React, { ChangeEvent, FC, useEffect, useState } from 'react';
+import { useTranslation } from 'react-i18next';
 import { VALIDATION } from 'shared/config';
 
 type TypeInput = 'checkbox' | 'password';
@@ -18,6 +19,8 @@ const FormInput: FC<FormInputProps> = ({
     const [regExp, setRegExp] = useState<RegExp>(null);
     const [maxLength, setMaxLength] = useState<number>(null);
     const [rule, setRule] = useState('');
+
+    const { t } = useTranslation('form');
 
     useEffect(() => {
         if (VALIDATION[title]) {
@@ -56,7 +59,7 @@ const FormInput: FC<FormInputProps> = ({
     return (
         <div className='form__item'>
             <label style={{ display: 'block' }} htmlFor={title}>
-                {title}
+                {t(title)}
             </label>
             <input
                 style={{ display: 'block' }}

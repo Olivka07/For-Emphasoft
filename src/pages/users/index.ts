@@ -1,1 +1,1 @@
-export { AsyncUsersPage } from './ui';
+export { AsyncUsersPage as UsersPage } from './ui/AsyncUsersPage';

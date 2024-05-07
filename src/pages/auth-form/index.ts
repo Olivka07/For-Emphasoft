@@ -1,1 +1,1 @@
-export { AsyncAuthForm } from './ui';
+export { AsyncAuthFormPage as AuthFromPage } from './ui/AsyncAuthFormPage';

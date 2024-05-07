@@ -1,8 +1,12 @@
 import React, { useEffect } from 'react';
+import { Modal } from 'shared/ui/modal';
+import { FormAuthorize } from 'widgets/form-auth/ui/FormAuthorize';
+import { Message } from 'shared/ui/message/Message';
+import { useMessage } from 'shared/helpers/hooks/message.hook';
 import { useNavigate } from 'react-router-dom';
-import { ConfirmUser } from 'widgets/form-user/ui/ConfirmUser';
 
-const ConfirmForm = () => {
+const AuthFormPage = () => {
+    const { toggle, visible } = useMessage();
     const navigate = useNavigate();
     function escDown(evt: KeyboardEvent) {
         let isEscape = false;
@@ -17,11 +21,14 @@ const ConfirmForm = () => {
     }, []);
     return (
         <>
-            <div className='form__confirm-modal'>
-                <ConfirmUser />
-            </div>
+            <Message visible={visible} />
+            <Modal>
+                <div>
+                    <FormAuthorize toggle={toggle} />
+                </div>
+            </Modal>
         </>
     );
 };
 
-export default ConfirmForm;
+export default AuthFormPage;
