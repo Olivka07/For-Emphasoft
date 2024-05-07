@@ -2,12 +2,16 @@ import React, { useEffect } from 'react';
 import { Modal } from 'shared/ui/modal';
 import { Message } from 'shared/ui/message/Message';
 import { useMessage } from 'shared/helpers/hooks/message.hook';
-import { Outlet, useNavigate, useParams } from 'react-router-dom';
+import { useNavigate, useParams } from 'react-router-dom';
 import { FormUser } from 'widgets/form-user/ui/FormUser';
+import { useLoading } from 'shared/helpers/hooks/loading.hook';
+import { Loading } from 'shared/ui/loading';
 
 const UserFormPage = () => {
     const { id } = useParams();
     const { toggle, visible } = useMessage();
+    const { changeLoading, loading } = useLoading();
+
     const navigate = useNavigate();
     function escDown(evt: KeyboardEvent) {
         let isEscape = false;
@@ -23,9 +27,15 @@ const UserFormPage = () => {
     return (
         <>
             <Message visible={visible} />
+            {loading && <Loading />}
             <Modal>
                 <div>
-                    <FormUser id={Number(id) ?? undefined} toggle={toggle} />
+                    <FormUser
+                        changeLoading={changeLoading}
+                        loading={loading}
+                        id={Number(id) ?? undefined}
+                        toggle={toggle}
+                    />
                 </div>
             </Modal>
         </>

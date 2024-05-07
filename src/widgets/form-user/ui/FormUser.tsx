@@ -9,18 +9,21 @@ import React, {
 } from 'react';
 import { Outlet, useNavigate } from 'react-router-dom';
 import { getUser } from 'shared/api/users/users';
-import { useLoading } from 'shared/helpers/hooks/loading.hook';
-import { Loading } from 'shared/ui/loading';
 import { createUserFx } from 'entities/users/model/units';
 import { useTranslation } from 'react-i18next';
 
 interface FormUserProps {
     id?: number;
     toggle: (p: string) => void;
+    changeLoading: (p: boolean) => void;
+    loading: boolean;
 }
-export const FormUser: FC<FormUserProps> = ({ toggle, id }) => {
-    const { changeLoading, loading } = useLoading();
-
+export const FormUser: FC<FormUserProps> = ({
+    toggle,
+    id,
+    changeLoading,
+    loading
+}) => {
     const [changed, setChanged] = useState<boolean>();
     const [username, setUsername] = useState('');
     const [password, setPassword] = useState('');
@@ -107,7 +110,7 @@ export const FormUser: FC<FormUserProps> = ({ toggle, id }) => {
                 <h2>
                     {t(id ? 'Изменить пользователя' : 'Создать пользователя')}
                 </h2>
-                {(loading && <Loading />) || (
+                {!loading && (
                     <>
                         <FormInput
                             title='username'
