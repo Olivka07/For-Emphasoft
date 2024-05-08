@@ -9,16 +9,14 @@ interface FormInputProps {
     title: string;
     value: string | boolean;
     changeHandler: (e: ChangeEvent<HTMLInputElement>) => void;
+    className?: string;
 }
-const FormInput: FC<FormInputProps> = ({
-    title,
-    type,
-    value,
-    changeHandler
-}) => {
+const FormInput: FC<FormInputProps> = (props) => {
     const [regExp, setRegExp] = useState<RegExp>(null);
     const [maxLength, setMaxLength] = useState<number>(null);
     const [rule, setRule] = useState('');
+
+    const { title, type, value, changeHandler } = props;
 
     const { t } = useTranslation('form');
 
@@ -50,7 +48,6 @@ const FormInput: FC<FormInputProps> = ({
                 );
             else
                 setRule((prev) => {
-                    console.log(prev);
                     return prev.includes(';') ? prev.split(';')[0] : '';
                 });
         }

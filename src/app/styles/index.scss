@@ -159,14 +159,15 @@ h2 {
             }
 
             &[type='checkbox'] {
-                transform: scale(1.5);
+                justify-self: start;
+                transform: scale(1.5) translate(30%, 0);
 
                 @media (min-width: 1500px) {
-                    transform: scale(2);
+                    transform: scale(2) translate(40%, 0);
                 }
 
                 @media (min-width: 1800px) {
-                    transform: scale(3);
+                    transform: scale(3) translate(40%, 0);
                 }
             }
             &:focus {
